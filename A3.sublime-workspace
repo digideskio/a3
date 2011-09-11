@@ -1,0 +1,225 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0,
+		"selected_items":
+		[
+		],
+		"width": 0
+	},
+	"console":
+	{
+		"height": 0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": true,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/core/objects/primitives/Cube.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/core/objects/primitives/Sphere.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/core/objects/primitives/Plane.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/addon/intersection/Ray.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/addon/intersection/Projector.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/build/properties/build.properties",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/build/build.xml",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/core/math/Matrix4.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/sandbox/ray/index.html",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/A3.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/core/math/Vector3.js",
+		"/Users/Paul/Dropbox/Projects/Sites/Experiments/Sparkles/js/Surface.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/addon/intersection/Unprojector.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/core/Object3D.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/addon/intersection/ray.js",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/includes/scripts.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/a3/feed/index.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/index.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/a3/episode-1/index.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/css/aerotwist.css",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/deploy/www/samples/environments/credits.txt",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/a3/index.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/includes/content-header.php",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/deploy/www/js/a3.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/core/math/Matrix3.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/core/render/textures/EnvironmentMap.js",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/src/js/core/objects/Mesh.js",
+		"/Users/Paul/Dropbox/Licenses/sublimetext.txt",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/video/output/episode-0/slides/css/main.css",
+		"/Users/Paul/Dropbox/Projects/Sites/A3/video/output/episode-0/slides/index.html",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/lab/feed/index.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/lab/index.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/lab/undulating-monkey/index.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Aerotwist 1.1/www/aerotwist.com 1.1/lab/photoparticles/index.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Experiments/Raymarching/js/a3.js",
+		"/Users/Paul/Dropbox/Projects/Sites/Experiments/Raymarching/js/shader.loader.js",
+		"/Users/Paul/Dropbox/Projects/Sites/Experiments/Raymarching/css/style.css",
+		"/Users/Paul/Dropbox/Projects/Sites/Experiments/Raymarching/index.html",
+		"/Users/Paul/Dropbox/Projects/Sites/Experiments/Raymarching/js/jquery-1.5.1.min.js",
+		"/Users/Paul/Dropbox/Projects/Sites/Experiments/Raymarching/js/a3.min.js",
+		"/Users/Paul/Dropbox/Projects/Sites/Bingo/index.php",
+		"/Users/Paul/Dropbox/Projects/Sites/Bingo/save.php"
+	],
+	"find":
+	{
+		"height": 33
+	},
+	"find_in_files":
+	{
+		"height": 0,
+		"include_history":
+		[
+		],
+		"location_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mult",
+			"invert",
+			"/js",
+			"../shaders",
+			"../js",
+			"src/",
+			"src=\"/",
+			" title",
+			"The World",
+			"objLab",
+			"arrLab",
+			"\">",
+			"class=\"standard-button-orange\"",
+			"lab/strange-attractor/",
+			"h1",
+			"A3.Core.Render.",
+			".Texture",
+			"Texture",
+			"texture",
+			"Texture",
+			"texture",
+			"Texture",
+			"Render",
+			"color",
+			"orthographic",
+			"projectionMatr",
+			"initialized",
+			"render("
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0
+	},
+	"input":
+	{
+		"height": 30
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0,
+			1
+		],
+		"rows":
+		[
+			0,
+			1
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0,
+		"selected_items":
+		[
+			[
+				"index",
+				"ray/index.html"
+			],
+			[
+				"matri",
+				"src/js/core/math/Matrix4.js"
+			],
+			[
+				"objec",
+				"src/js/core/Object3D.js"
+			],
+			[
+				"matr",
+				"src/js/core/math/Matrix4.js"
+			],
+			[
+				"aero",
+				"css/aerotwist.css"
+			]
+		],
+		"width": 0
+	},
+	"select_project":
+	{
+		"height": 0,
+		"selected_items":
+		[
+		],
+		"width": 0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165,
+	"status_bar_visible": true
+}

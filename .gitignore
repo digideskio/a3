@@ -1,0 +1,9 @@
+*.sublime-project
+*.sublime-wokspace
+.project
+.pydevproject
+.externalToolBuilders
+assets
+blender
+sandbox
+video
