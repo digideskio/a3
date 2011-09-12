@@ -2129,6 +2129,7 @@ A3.Core.Render.Shaders.ShaderLibrary = function() {
 	 * we want to bake in
 	 *
 	 * @param {String} shader The shader to look at
+	 * @private
 	 */
 	function replaceChunks(shader) {
 
@@ -2148,6 +2149,7 @@ A3.Core.Render.Shaders.ShaderLibrary = function() {
 	 * and ensures it has a trailing .0 if needed
 	 *
 	 * @param {Number} number The number to convert
+	 * @private
 	 */
 	function convertNumber(number) {
 		if(typeof number === "number") {
@@ -2165,6 +2167,7 @@ A3.Core.Render.Shaders.ShaderLibrary = function() {
 	 * Converts a vector for use in GLSL. Lovely.
 	 *
 	 * @param {A3.Core.Math.Vector3} vector The vector to convert
+	 * @private
 	 */
 	function convertVector(vector) {
 
