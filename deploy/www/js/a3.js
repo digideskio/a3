@@ -409,7 +409,7 @@ A3.Core.Math.Matrix4.prototype = {
 	 * the case of the GLs 1 is at the top of the screen, -1 at the bottom, so you
 	 * end up &quot;inverting&quot; the Y values; top is height / 2, bottom is -height / 2.
 	 *
-	 * @see <a href="http://www.songho.ca/opengl/gl_projectionmatrix.html">Song Ho Ann's Explanation of OpenGL's Projection Matrix</a>
+	 * @see <a href="http://www.songho.ca/opengl/gl_projectionmatrix.html">Song Ho Ahn's Explanation of OpenGL's Projection Matrix</a>
 	 *
 	 * @param {Number} left The left value of the view frustum, typically -width / 2
 	 * @param {Number} right The right value of the view frustum, typically width / 2
