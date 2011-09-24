@@ -1,5 +1,5 @@
 *.sublime-project
-A3.sublime-wokspace
+*.sublime-workspace
 .project
 .pydevproject
 .externalToolBuilders
