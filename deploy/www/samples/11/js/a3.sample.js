@@ -47,8 +47,7 @@ AEROTWIST.A3.Sample = new function() {
       SCALE         = 200,
       DEPTH         = 500,
       NEAR          = 0.1,
-      FAR           = 3000,
-      VIEW_ANGLE    = 45;
+      FAR           = 3000;
 
   /**
    * Initialize the scene
@@ -159,7 +158,7 @@ AEROTWIST.A3.Sample = new function() {
         aspect        = width / height;
 
         renderer.resize(width, height);
-        camera.projectionMatrix.perspective(VIEW_ANGLE, aspect, NEAR, FAR);
+        camera.projectionMatrix.orthographic(-width / 2, width / 2, height / 2, -height / 2, NEAR, FAR);
 
       }
     };
