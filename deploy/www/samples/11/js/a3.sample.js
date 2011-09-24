@@ -44,7 +44,7 @@ AEROTWIST.A3.Sample = new function() {
 
 
   // set some constants
-      SCALE         = 100,
+      SCALE         = 200,
       DEPTH         = 500,
       NEAR          = 0.1,
       FAR           = 3000,
@@ -73,7 +73,6 @@ AEROTWIST.A3.Sample = new function() {
         createObjects(geometry);
         addEventListeners();
         render();
-        console.log(geometry);
     });
 
     loader.load();
