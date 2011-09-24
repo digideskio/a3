@@ -58,7 +58,7 @@ A3.Core.Math.Matrix3.prototype = {
 	/**
 	 * Calculates the determinant of the matrix. Primarily used for inverting the matrix
 	 *
-	 * @see http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/threeD/index.htm
+	 * @see <a href="http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/threeD/index.htm">Inverting a 3D Matrix on Euclidean Space</a>
 	 */
 	determinant: function() {
 

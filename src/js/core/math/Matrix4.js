@@ -92,7 +92,7 @@ A3.Core.Math.Matrix4.prototype = {
 	 * used for perspective and orthographic
 	 * projections
 	 *
-	 * @see http://www.opengl.org/sdk/docs/man/xhtml/glFrustum.xml
+	 * @see <a href="http://www.opengl.org/sdk/docs/man/xhtml/glFrustum.xml">OpenGL glFrustum reference</a>
 	 *
 	 * @param {Number} left The coordinate for the left clipping plane
 	 * @param {Number} right The coordinate for the right clipping plane
@@ -152,6 +152,43 @@ A3.Core.Math.Matrix4.prototype = {
 	},
 
 	/**
+	 * Creates an orthographic projection for the camera. Worth noting
+	 * that WebGL contexts run differently in Y than most other contexts. Where
+	 * typically the Y value gets larger the further you go down the screen, in
+	 * the case of the GLs 1 is at the top of the screen, -1 at the bottom, so you
+	 * end up &quot;inverting&quot; the Y values; top is height / 2, bottom is -height / 2.
+	 *
+	 * @see <a href="http://www.songho.ca/opengl/gl_projectionmatrix.html">Song Ho Ann's Explanation of OpenGL's Projection Matrix</a>
+	 *
+	 * @param {Number} left The left value of the view frustum, typically -width / 2
+	 * @param {Number} right The right value of the view frustum, typically width / 2
+	 * @param {Number} top The top value of the view frustum, typically height / 2
+	 * @param {Number} bottom The bottom value of the view frustum, typically -height / 2
+	 */
+	orthographic: function(left, right, top, bottom, nearVal, farVal) {
+
+		var width  = right - left,
+				height = top - bottom,
+				depth  = farVal - nearVal,
+
+				a = 2 / width,
+				b = 2 / height,
+				c = -2 / depth,
+
+				x = -(right + left) / width,
+				y = -(top + bottom) / height,
+				z = -(farVal + nearVal) / depth;
+
+		return this.set(
+			a,  0,  0,  x,
+			0,  b,  0,  y,
+			0,  0,  c,  z,
+			0,  0,  0,  1
+		);
+
+	},
+
+	/**
 	 * Adds to the translation values of a matrix
 	 *
 	 * @param {A3.Core.Math.Vector3} vector A vector containing the x,y and z components of the translation
@@ -169,7 +206,7 @@ A3.Core.Math.Matrix4.prototype = {
 	 *
 	 * @param {A3.Core.Math.Vector3} vector The vector containing the scale values
 	 *
-	 * @see http://en.wikipedia.org/wiki/Scaling_(geometry)
+	 * @see <a href="http://en.wikipedia.org/wiki/Scaling_(geometry)">Wikipedia on scaling a matrix with a vector</a>
 	 */
 	scaleByVector: function(vector) {
 
@@ -210,7 +247,8 @@ A3.Core.Math.Matrix4.prototype = {
 	 *
 	 * @param {A3.Core.Math.Vector3} vector The vector specifying the rotation values in X,Y and Z
 	 *
-	 * @see http://www.robertblum.com/articles/2005/02/14/decomposing-matrices [NB sign of
+	 * @see <a href="http://www.robertblum.com/articles/2005/02/14/decomposing-matrices">Robert Blum's article on
+	 * combining rotation matrices</a> [NB sign of
 	 * sin values are reversed because we are working in a right handed system (WebGL)
 	 * not a left handed one (DirectX)]
 	 */
@@ -311,7 +349,7 @@ A3.Core.Math.Matrix4.prototype = {
 	/**
 	 * Calculates the determinant of the matrix. Primarily used for inverting the matrix
 	 *
-	 * @see http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
+	 * @see <a href="http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm">Inverting a 4D matrix on Euclidean Space</a>
 	 */
 	determinant: function() {
 
@@ -350,7 +388,7 @@ A3.Core.Math.Matrix4.prototype = {
 	 * Inverts the matrix.
 	 *
 	 * @throws An error if the matrix determinant is zero
-   * @see http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
+   * @see <a href="http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm">Inverting a 4D matrix on Euclidean Space</a>
 	 */
 	invert: function() {
 
