@@ -7,21 +7,16 @@ html, body {
 }
 
 #wrapper {
-  display: box;
-  display: -moz-box;
-  display: -webkit-box;
-  box-orient: vertical;
-  -moz-box-orient: vertical;
-  -webkit-box-orient: vertical;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  position: absolute;
+  display: block;
 }
 
 #container {
-  box-flex: 1;
-  -moz-box-flex: 1;
-  -webkit-box-flex: 1;
+  position: absolute;
+  top: 0;
+  bottom: 115px;
   width: 100%;
   cursor: pointer;
   background: #0C0D0E url(../images/dark-background.png) no-repeat center center;
@@ -59,7 +54,9 @@ html, body {
   border-top: 1px solid #44454A;
   height: 114px;
   width: 100%;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(19,20,26);
   background-image: -webkit-gradient(
       linear,
       left bottom,
@@ -68,6 +65,11 @@ html, body {
       color-stop(1, rgb(33,34,40))
   );
   background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(19,20,26) 90%,
+      rgb(33,34,40) 100%
+  );
+  background-image: -o-linear-gradient(
       center bottom,
       rgb(19,20,26) 90%,
       rgb(33,34,40) 100%
