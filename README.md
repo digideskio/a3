@@ -15,3 +15,7 @@ I'm sharing the source code all the same. You can see more information about it 
 [![Environment Mapping](http://aerotwist.com/images/content/a3/samples/8.png)](http://lab.aerotwist.com/webgl/a3/samples/08/)
 [![Undulating Monkey](http://aerotwist.com/images/content/a3/samples/9.png)](http://lab.aerotwist.com/webgl/undulating-monkey/)
 [![Strange Attractor](http://aerotwist.com/images/content/a3/samples/10.png)](http://lab.aerotwist.com/webgl/strange-attractor/)
+
+## Thanks
+
+Thanks to Mr. doob, AlteredQualia and the guys who make Three.js. And thanks to Bartek Drozdz for the inspiration to try :)
