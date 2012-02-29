@@ -11,40 +11,40 @@ var A3 = {};
  */
 A3.Constants = {
 
-	/**
-	 * @description The limit to the number of lights in the scene
-	 * @type Number
-	 */
-	MAX_LIGHTS: 4,
+  /**
+   * @description The limit to the number of lights in the scene
+   * @type Number
+   */
+  MAX_LIGHTS: 4,
 
-	/**
-	 * @description The light types
-	 * @type Object
-	 */
-	LIGHT_TYPES: {
-		NONE: 0,
-		AMBIENT: 1,
-		DIRECTIONAL: 2,
-		POINT: 4
-	},
+  /**
+   * @description The light types
+   * @type Object
+   */
+  LIGHT_TYPES: {
+    NONE: 0,
+    AMBIENT: 1,
+    DIRECTIONAL: 2,
+    POINT: 4
+  },
 
-	/**
-	 * @description How the mesh should be rendered, i.e. solid / particle
-	 * @type Object
-	 */
-	RENDER_TYPES: {
-		SOLID: 1,
-		PARTICLES: 2
-	},
+  /**
+   * @description How the mesh should be rendered, i.e. solid / particle
+   * @type Object
+   */
+  RENDER_TYPES: {
+    SOLID: 1,
+    PARTICLES: 2
+  },
 
-	/**
-	 * @description How the mesh should be rendered, i.e. normal / additive
-	 * @type Object
-	 */
-	BLEND_TYPES: {
-		NORMAL: 1,
-		ADDITIVE: 2
-	}
+  /**
+   * @description How the mesh should be rendered, i.e. normal / additive
+   * @type Object
+   */
+  BLEND_TYPES: {
+    NORMAL: 1,
+    ADDITIVE: 2
+  }
 };
 
 /** Core */
