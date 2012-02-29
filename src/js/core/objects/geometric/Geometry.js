@@ -4,10 +4,8 @@
  *
  * @author Paul Lewis
  *
- * @param {A3.Core.Objects.Geometric.Vertex[]} vertices The mesh vertices
- * @param {A3.Core.Objects.Geometric.Face4[]} faces The mesh faces
- * @param {A3.Core.Math.Vector3[]} colors The vertex colors
- * @param {A3.Core.Math.Vector2[]} faceUVs The face UV coordinates
+ * @param {Object} data An object containing the faces, vertices, colours and UV
+ * coordinates as keyed arrays
  */
 A3.Core.Objects.Geometric.Geometry = function(data) {
 
