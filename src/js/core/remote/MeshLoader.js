@@ -7,24 +7,26 @@
  * @param {String} url The URL to load
  * @param {Function} callback The callback to which the geometry should be passed
  */
-A3.Core.Remote.MeshLoader = function(url, callback) {
+A3.Core.Remote.MeshLoader = function(url, callback, separateFaces) {
 
-  var request     = new XMLHttpRequest(),
-    geometry      = null,
-    data          = null,
-    vertexArray   = null,
-    vertices      = [],
-    faces         = [],
-    colors        = [],
-    faceArray     = null,
-    faceData      = null,
-    face          = null,
-    uvs           = [],
-    uvArray       = null,
-    uvDataBlock   = null,
-    v             = 0,
-    f             = 0,
-    uv            = 0;
+  var request       = new XMLHttpRequest(),
+      geometry      = null,
+      data          = null,
+      vertexArray   = null,
+      vertices      = [],
+      faces         = [],
+      colors        = [],
+      faceArray     = null,
+      faceData      = null,
+      face          = null,
+      uvs           = [],
+      uvArray       = null,
+      uvDataBlock   = null,
+      v             = 0,
+      f             = 0,
+      uv            = 0;
+
+  separateFaces     = separateFaces || false;
 
   request.onreadystatechange = function() {
     if(request.readyState === 4) {
@@ -69,7 +71,8 @@ A3.Core.Remote.MeshLoader = function(url, callback) {
         vertices: vertices,
         faces: faces,
         colors: colors,
-        faceUVs: uvs
+        faceUVs: uvs,
+        separateFaces: separateFaces
       });
 
       // call the callback

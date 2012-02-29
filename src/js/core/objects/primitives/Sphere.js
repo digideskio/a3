@@ -155,7 +155,8 @@ A3.Core.Objects.Primitives.Sphere = function(radius, segments, rings) {
     vertices: vertices,
     faces: faces,
     colors: colors,
-    faceUVs: uvs
+    faceUVs: uvs,
+    separateFaces: true
   });
 };
 
