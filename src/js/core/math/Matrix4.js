@@ -334,7 +334,7 @@ A3.Core.Math.Matrix4.prototype = {
 
     // we assume that this is actually a 4D vector with a w component of 1
     var vx = vector.x, vy = vector.y, vz = vector.z,
-      vw = 1 / (this.m41 * vx * this.m42 * vy + this.m43 * vz + this.m44);
+      vw = 1 / (this.m41 * vx + this.m42 * vy + this.m43 * vz + this.m44);
 
     vector.x = this.m11 * vx + this.m12 * vy + this.m13 * vz + this.m14;
     vector.y = this.m21 * vx + this.m22 * vy + this.m23 * vz + this.m24;
