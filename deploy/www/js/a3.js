@@ -2693,6 +2693,38 @@ A3.Core.Render.Renderer.prototype = {
 
       // enable for the new program
       this.enableAttribArrays();
+
+      // set up textures
+      if(!!mesh.shader.texture && mesh.shader.texture.isReady() && ~vertexUVAttribute) {
+
+        // upload the texture to the GPU
+        if(!mesh.shader.texture.data) {
+          this.processTexture(mesh.shader.texture);
+        }
+
+        // set the texture
+        this.gl.activeTexture(this.gl.TEXTURE0 + mesh.shader.texture.index);
+        this.gl.bindTexture(this.gl.TEXTURE_2D, mesh.shader.texture.data);
+        this.gl.uniform1i(textureUniform, mesh.shader.texture.index);
+
+        // pass the UV data
+        this.gl.bindBuffer(this.gl.ARRAY_BUFFER, mesh.buffers.uvs.data);
+        this.gl.vertexAttribPointer(vertexUVAttribute, mesh.uvDataSize, this.gl.FLOAT, false, 0, 0);
+      }
+
+      // set up the environment map
+      if(!!mesh.shader.environmentMap && mesh.shader.environmentMap.isReady()) {
+
+        // upload the texture to the GPU
+        if(!mesh.shader.environmentMap.data) {
+          this.processEnvironmentMap(mesh.shader.environmentMap);
+        }
+
+        // set the texture
+        this.gl.activeTexture(this.gl.TEXTURE0 + mesh.shader.environmentMap.index);
+        this.gl.bindTexture(this.gl.TEXTURE_CUBE_MAP, mesh.shader.environmentMap.data);
+        this.gl.uniform1i(environmentUniform, mesh.shader.environmentMap.index);
+      }
     }
 
     // set the object's alpha value
@@ -2838,38 +2870,6 @@ A3.Core.Render.Renderer.prototype = {
     // UVs:
     if(mesh.renderType === A3.Constants.RENDER_TYPES.PARTICLES) {
       vertexUVAttribute = 0;
-    }
-
-    // set up textures
-    if(!!mesh.shader.texture && mesh.shader.texture.isReady() && ~vertexUVAttribute) {
-
-      // upload the texture to the GPU
-      if(!mesh.shader.texture.data) {
-        this.processTexture(mesh.shader.texture);
-      }
-
-      // set the texture
-      this.gl.activeTexture(this.gl.TEXTURE0 + mesh.shader.texture.index);
-      this.gl.bindTexture(this.gl.TEXTURE_2D, mesh.shader.texture.data);
-      this.gl.uniform1i(textureUniform, mesh.shader.texture.index);
-
-      // pass the UV data
-      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, mesh.buffers.uvs.data);
-      this.gl.vertexAttribPointer(vertexUVAttribute, mesh.uvDataSize, this.gl.FLOAT, false, 0, 0);
-    }
-
-    // set up the environment map
-    if(!!mesh.shader.environmentMap && mesh.shader.environmentMap.isReady()) {
-
-      // upload the texture to the GPU
-      if(!mesh.shader.environmentMap.data) {
-        this.processEnvironmentMap(mesh.shader.environmentMap);
-      }
-
-      // set the texture
-      this.gl.activeTexture(this.gl.TEXTURE0 + mesh.shader.environmentMap.index);
-      this.gl.bindTexture(this.gl.TEXTURE_CUBE_MAP, mesh.shader.environmentMap.data);
-      this.gl.uniform1i(environmentUniform, mesh.shader.environmentMap.index);
     }
 
     // DRAW SOLIDS:
