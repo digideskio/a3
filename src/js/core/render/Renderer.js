@@ -198,7 +198,6 @@ A3.Core.Render.Renderer.prototype = {
     // reset the projection matrix and the last
     // used shader program
     this.projectionMatrix.zero();
-    this.lastShaderProgram = null;
 
     if(this.autoClear) {
       this.clear();
@@ -380,6 +379,49 @@ A3.Core.Render.Renderer.prototype = {
     }
   },
 
+  enableAttribArrays: function() {
+    if(this.lastShaderProgram) {
+      this.setAttribArrays("enableVertexAttribArray");
+    }
+  },
+
+  disableAttribArrays: function() {
+    if(this.lastShaderProgram) {
+      this.setAttribArrays("disableVertexAttribArray");
+    }
+  },
+
+  setAttribArrays: function(which) {
+
+    // now we have processed the built-in
+    // attributes we should go through and enable each
+    var attributes = Object.keys(this.lastShaderProgram.attributes),
+        attCount = attributes.length,
+        attCustoms = this.lastShaderProgram.attributes.aCustoms.length,
+        location = -1;
+
+    // enable the vertex arrays
+    while(attCount--) {
+      if(attributes[attCount] !== "aCustoms") {
+
+        location = this.lastShaderProgram.attributes[attributes[attCount]];
+
+        if(location !== -1) {
+          this.gl[which](location);
+        }
+      }
+    }
+
+    while(attCustoms--) {
+
+      location = this.lastShaderProgram.attributes.aCustoms[attCustoms].location;
+
+      if(location !== -1) {
+        this.gl[which](location);
+      }
+    }
+  },
+
   /**
    * Renders a mesh out to the context
    *
@@ -436,11 +478,19 @@ A3.Core.Render.Renderer.prototype = {
     // update to use the mesh's shader if it
     // has changed since the last object
     if(meshShaderProgram !== this.lastShaderProgram) {
+
+      // disable the attrib arrays for the old program
+      this.disableAttribArrays();
+
+      // switch
       this.gl.useProgram(meshShaderProgram);
       this.lastShaderProgram = meshShaderProgram;
 
       // set the projection matrix for this shader
       this.gl.uniformMatrix4fv(projectionMatrixUniform, false, this.projectionMatrixArray);
+
+      // enable for the new program
+      this.enableAttribArrays();
     }
 
     // set the object's alpha value

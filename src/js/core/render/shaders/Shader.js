@@ -146,8 +146,6 @@ A3.Core.Render.Shaders.Shader.prototype = {
       // create the shaders and program
       var vertexShader         = gl.createShader(gl.VERTEX_SHADER),
         fragmentShader         = gl.createShader(gl.FRAGMENT_SHADER),
-        attributes             = null,
-        attCount               = 0,
         light                  = 0,
         lightCount             = A3.Constants.MAX_LIGHTS,
 
@@ -208,19 +206,6 @@ A3.Core.Render.Shaders.Shader.prototype = {
         "aCustoms": []
       };
 
-      // now we have processed the built-in
-      // attributes we should go through and enable each
-      attributes  = Object.keys(this.shaderProgram.attributes);
-      attCount  = attributes.length;
-
-      while(attCount--) {
-        if(attributes[attCount] !== "aCustoms") {
-          gl.enableVertexAttribArray(
-            this.shaderProgram.attributes[attributes[attCount]]
-          );
-        }
-      }
-
       // fill in the custom attributes
       while(customAttributeCount--) {
 
@@ -239,11 +224,6 @@ A3.Core.Render.Shaders.Shader.prototype = {
         );
 
         customAttribute.needsUpdate = true;
-
-        // enable it
-        gl.enableVertexAttribArray(
-          this.shaderProgram.attributes.aCustoms[this.shaderProgram.attributes.aCustoms.length-1].location
-        );
       }
 
       // same for the uniforms
