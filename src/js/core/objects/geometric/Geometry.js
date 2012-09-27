@@ -127,6 +127,8 @@ A3.Core.Objects.Geometric.Geometry = function(data) {
   // split out any shared vertices
   if(separateFaces) {
     this.separateFaces();
+  } else {
+    this.convertFaceUVs();
   }
 
   // calculate the vertex normals
@@ -205,6 +207,37 @@ A3.Core.Objects.Geometric.Geometry.prototype = {
     } else {
       vertex.normal.add(normal);
     }
+  },
+
+  convertFaceUVs: function() {
+
+    var f          = 0,
+        v          = 1,
+        fv         = 0,
+        vCount     = 3,
+        face       = null,
+        vertex     = null;
+
+    for(f = 0; f < this.faces.length; f++) {
+
+      face  = this.faces[f];
+      vCount  = (face instanceof A3.Core.Objects.Geometric.Face3 ? 3 : 4);
+
+      // go through each face vertex
+      for(v = 1; v <= vCount; v++) {
+
+        // get the vertex and color
+        vertex  = this.vertices[face["v"+v]];
+
+        // now assign the face uv value to the correct
+        // place in the uv array
+        if(fv < this.faceUVs.length) {
+          this.uvs[face["v"+v]] = this.faceUVs[fv];
+        }
+        fv++;
+      }
+    }
+
   },
 
   /**

@@ -638,6 +638,7 @@ A3.Core.Render.Renderer.prototype = {
       vertexUVAttribute = 0;
     }
 
+    // set up textures
     if(!!mesh.shader.texture && mesh.shader.texture.isReady() && ~vertexUVAttribute) {
 
       // upload the texture to the GPU
@@ -655,6 +656,7 @@ A3.Core.Render.Renderer.prototype = {
       this.gl.vertexAttribPointer(vertexUVAttribute, mesh.uvDataSize, this.gl.FLOAT, false, 0, 0);
     }
 
+    // set up the environment map
     if(!!mesh.shader.environmentMap && mesh.shader.environmentMap.isReady()) {
 
       // upload the texture to the GPU
@@ -664,7 +666,7 @@ A3.Core.Render.Renderer.prototype = {
 
       // set the texture
       this.gl.activeTexture(this.gl.TEXTURE0 + mesh.shader.environmentMap.index);
-      this.gl.bindTexture(this.gl.TEXTURE_2D, mesh.shader.environmentMap.data);
+      this.gl.bindTexture(this.gl.TEXTURE_CUBE_MAP, mesh.shader.environmentMap.data);
       this.gl.uniform1i(environmentUniform, mesh.shader.environmentMap.index);
     }
 
@@ -770,7 +772,7 @@ A3.Core.Render.Renderer.prototype = {
     this.gl.generateMipmap(this.gl.TEXTURE_CUBE_MAP);
 
     // now unbind
-    this.gl.bindTexture(this.gl.TEXTURE_2D, null);
+    this.gl.bindTexture(this.gl.TEXTURE_CUBE_MAP, null);
   }
 };
 
