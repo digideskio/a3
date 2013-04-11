@@ -1,5 +1,7 @@
 # A3
 
+**Please note:** *I'm not actively maintaining this code. [Three.js](https://github.com/mrdoob/three.js/) is what you should be using for your next project. Happy coding!*
+
 A3 is a simple WebGL engine built in JavaScript. It's primary purpose was as a learning experience for me, but
 I'm sharing the source code all the same. You can see more information about it [on my site](http://aerotwist.com/a3/)
 
